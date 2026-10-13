@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>มรดกวัฒนธรรมไทย | Thai Cultural Heritage & Arts</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Prompt & Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#fef9c3',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                        },
+                        maroon: {
+                            700: '#6b1111',
+                            800: '#4a0808',
+                            900: '#2d0404',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            900: '#070c19',
+                        }
+                    },
+                    fontFamily: {
+                        prompt: ['Prompt', 'sans-serif'],
+                        sarabun: ['Sarabun', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom aesthetics and gold glowing animations */
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(234, 179, 8, 0.4);
+            border-color: rgba(250, 204, 21, 0.6);
+        }
+
+        /* Glassmorphism effects */
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ca8a04;
+        }
+
+        /* Ranad Key press active style */
+        .ranad-key {
+            transition: all 0.08s ease-out;
+            background: linear-gradient(180deg, #854d0e 0%, #4a2c06 100%);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.2);
+        }
+        .ranad-key:active, .ranad-key.active {
+            transform: translateY(4px) scale(0.98);
+            background: linear-gradient(180deg, #ca8a04 0%, #854d0e 100%);
+            box-shadow: 0 0 12px rgba(250, 204, 21, 0.8);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-gold-500 selection:text-black">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-gold-600 via-amber-400 to-yellow-200 flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid fa-om text-maroon-900 text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold font-heading gold-gradient-text block leading-tight">มรดกวัฒนธรรมไทย</span>
+                        <span class="text-xs text-gray-400 font-sarabun tracking-wider uppercase">Thai Cultural Heritage</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-gold-400 transition-colors">เกี่ยวกับ</a>
+                    <a href="#categories" class="hover:text-gold-400 transition-colors">หมวดหมู่วัฒนธรรม</a>
+                    <a href="#ranad" class="hover:text-gold-400 transition-colors">ดนตรีไทยจำลอง</a>
+                    <a href="#wishing-canvas" class="hover:text-gold-400 transition-colors">ลอยกระทง/ปล่อยโคม</a>
+                    <a href="#festivals" class="hover:text-gold-400 transition-colors">ประเพณีไทย</a>
+                    <a href="#quiz" class="hover:text-gold-400 transition-colors">แบบทดสอบ</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="#wishing-canvas" class="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-gold-600 to-amber-500 text-maroon-900 hover:from-gold-500 hover:to-amber-400 transition-all shadow-md hover:shadow-gold-500/30 font-heading">
+                        <i class="fa-solid fa-hands-praying mr-1.5"></i> ขอพรดิจิทัล
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2 text-xl focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-gold-400">เกี่ยวกับ</a>
+            <a href="#categories" class="block py-2 text-gray-300 hover:text-gold-400">หมวดหมู่วัฒนธรรม</a>
+            <a href="#ranad" class="block py-2 text-gray-300 hover:text-gold-400">ดนตรีไทยจำลอง</a>
+            <a href="#wishing-canvas" class="block py-2 text-gray-300 hover:text-gold-400">ลอยกระทง/ปล่อยโคม</a>
+            <a href="#festivals" class="block py-2 text-gray-300 hover:text-gold-400">ประเพณีไทย</a>
+            <a href="#quiz" class="block py-2 text-gray-300 hover:text-gold-400">แบบทดสอบ</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section with Canvas Particle Effect -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20">
+            <!-- Background Canvas for Ambient Thai Floating Elements -->
+            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+            
+            <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold mb-6">
+                    <i class="fa-solid fa-spa text-gold-400"></i>
+                    <span>สมบัติทางวัฒนธรรมและมรดกอันล้ำค่าแห่งสยาม</span>
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight font-heading mb-6 leading-tight">
+                    สะท้อนความงดงาม <br class="hidden sm:inline"/>
+                    <span class="gold-gradient-text">แห่งมรดกวัฒนธรรมไทย</span>
+                </h1>
+                
+                <p class="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto font-sarabun leading-relaxed mb-10">
+                    ร่วมสัมผัสและสืบสานเอกลักษณ์ไทย ผ่านศิลปะ สถาปัตยกรรม ประเพณี อาหารการกิน ดนตรีไทยเดิม และวิถีชีวิตอันทรงคุณค่าที่สืบทอดกันมาอย่างยาวนาน
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="#categories" class="px-8 py-3.5 rounded-full font-heading font-semibold text-sm bg-gradient-to-r from-gold-500 to-amber-600 text-maroon-900 hover:from-gold-400 hover:to-amber-500 shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-compass mr-2"></i>เริ่มสำรวจวัฒนธรรม
+                    </a>
+                    <a href="#ranad" class="px-8 py-3.5 rounded-full font-heading font-semibold text-sm bg-gray-800/80 hover:bg-gray-700 text-gray-200 border border-gray-700 hover:border-gold-500/50 transition-all">
+                        <i class="fa-solid fa-music mr-2 text-gold-400"></i>ทดลองบรรเลงดนตรีไทย
+                    </a>
+                </div>
+
+                <!-- Stats counter bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto pt-8 border-t border-gray-800/80">
+                    <div class="p-3 glass-panel rounded-2xl">
+                        <div class="text-2xl sm:text-3xl font-bold font-heading text-gold-400">77+</div>
+                        <div class="text-xs text-gray-400 mt-1">จังหวัดมรดกประเพณี</div>
+                    </div>
+                    <div class="p-3 glass-panel rounded-2xl">
+                        <div class="text-2xl sm:text-3xl font-bold font-heading text-gold-400">UNESCO</div>
+                        <div class="text-xs text-gray-400 mt-1">มรดกโลกและวัฒนธรรม</div>
+                    </div>
+                    <div class="p-3 glass-panel rounded-2xl">
+                        <div class="text-2xl sm:text-3xl font-bold font-heading text-gold-400">700+</div>
+                        <div class="text-xs text-gray-400 mt-1">ปีแห่งประวัติศาสตร์</div>
+                    </div>
+                    <div class="p-3 glass-panel rounded-2xl">
+                        <div class="text-2xl sm:text-3xl font-bold font-heading text-gold-400">100%</div>
+                        <div class="text-xs text-gray-400 mt-1">สืบสานสู่คนรุ่นใหม่</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture Categories Section -->
+        <section id="categories" class="py-20 bg-slate-950/60 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-heading gold-gradient-text mb-4">หมวดหมู่วัฒนธรรมไทย</h2>
+                    <p class="text-gray-400">ค้นพบความหลากหลายของภูมิปัญญา ศิลปะ และเอกลักษณ์ประจำชาติ</p>
+                    
+                    <!-- Search & Filter Bar -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto">
+                        <div class="relative w-full">
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" id="culture-search" placeholder="ค้นหา เช่น โขน, ต้มยำกุ้ง, สุโขทัย..." class="w-full pl-11 pr-4 py-3 rounded-full bg-slate-900 border border-gray-800 text-sm focus:outline-none focus:border-gold-500 text-gray-200">
+                        </div>
+                    </div>
+
+                    <!-- Category Tabs -->
+                    <div class="flex flex-wrap justify-center gap-2 mt-6" id="category-tabs">
+                        <button data-cat="all" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-gold-500 text-maroon-900 transition-all">ทั้งหมด</button>
+                        <button data-cat="architecture" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-slate-800 text-gray-300 hover:bg-gray-700 transition-all">สถาปัตยกรรม & ศิลปะ</button>
+                        <button data-cat="food" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-slate-800 text-gray-300 hover:bg-gray-700 transition-all">อาหารไทย</button>
+                        <button data-cat="performance" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-slate-800 text-gray-300 hover:bg-gray-700 transition-all">นาฏศิลป์ & ดนตรี</button>
+                        <button data-cat="textile" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-slate-800 text-gray-300 hover:bg-gray-700 transition-all">ผ้าไทย & การแต่งกาย</button>
+                        <button data-cat="martial" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-slate-800 text-gray-300 hover:bg-gray-700 transition-all">มวยไทย</button>
+                    </div>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cards-container">
+                    <!-- Cards will be populated dynamically by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Thai Ranad Ek Section -->
+        <section id="ranad" class="py-20 relative overflow-hidden bg-gradient-to-b from-slate-950 via-maroon-950/30 to-slate-950 border-y border-gold-500/20">
+            <div class="max-w-6xl mx-auto px-4 text-center">
+                <div class="inline-block p-3 rounded-full bg-gold-500/10 border border-gold-500/30 mb-4">
+                    <i class="fa-solid fa-drum text-2xl text-gold-400"></i>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold font-heading text-white mb-3">ระนาดเอกจำลอง (Virtual Ranad Ek)</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
+                    สัมผัสเสียงกังวานของเครื่องดนตรีไทยเดิม กดที่ผืนระนาดหรือใช้แป้นพิมพ์เพื่อบรรเลงเสียงสังเคราะห์สมจริง (Web Audio API)
+                </p>
+
+                <!-- Ranad Visual Container -->
+                <div class="glass-panel p-6 sm:p-10 rounded-3xl border border-gold-500/30 shadow-2xl relative">
+                    <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                        <div class="text-left">
+                            <span class="text-xs text-gold-400 font-semibold block">คำแนะนำ:</span>
+                            <span class="text-xs text-gray-400">คลิกที่ผืนระนาด หรือใช้ปุ่มตัวเลข/ตัวอักษรบนแป้นพิมพ์</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="ranad-demo-btn" class="px-4 py-2 rounded-lg bg-gold-500/20 hover:bg-gold-500/30 border border-gold-500/40 text-gold-300 text-xs font-semibold transition-all">
+                                <i class="fa-solid fa-play mr-1"></i> เล่นเพลงตัวอย่าง (ตระโฮมโรง)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Curved Ranad Frame -->
+                    <div class="relative py-8 px-2 sm:px-6 bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 rounded-2xl border border-amber-700/50 shadow-inner">
+                        <div class="flex items-end justify-center gap-1 sm:gap-2 h-64 overflow-x-auto pb-4 pt-2" id="ranad-keys-container">
+                            <!-- Ranad keys generated via JS -->
+                        </div>
+                        <div class="w-full h-4 bg-gradient-to-r from-amber-900 via-gold-700 to-amber-900 rounded-full mt-2 shadow-md"></div>
+                    </div>
+
+                    <!-- Keyboard mapping hint -->
+                    <div class="mt-6 text-xs text-gray-400 flex flex-wrap justify-center gap-2">
+                        <span class="px-2 py-1 bg-slate-900 rounded border border-gray-800">คีย์: 1-9, Q-W-E</span>
+                        <span class="px-2 py-1 bg-slate-900 rounded border border-gray-800">ระดับเสียง: เสียงต่ำ ➔ เสียงสูง</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Loi Krathong & Yi Peng Wishing Canvas -->
+        <section id="wishing-canvas" class="py-20 relative bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Form Controls -->
+                    <div class="lg:col-span-5 glass-panel p-8 rounded-3xl border border-gold-500/20">
+                        <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block mb-2">มงคลตระการตา</span>
+                        <h2 class="text-3xl font-bold font-heading text-white mb-4">ลอยกระทง & ปล่อยโคมดิจิทัล</h2>
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                            สืบสานประเพณีไทยและขอพรแม่คงคาหรือลอยโคมยี่เป็งขึ้นสู่ท้องฟ้า ร่วมเขียนข้อความอธิษฐานจิตเพื่อความเป็นสิริมงคล
+                        </p>
+
+                        <form id="wish-form" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-300 mb-1">เลือกประเภท:</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <label class="cursor-pointer flex items-center gap-2 p-3 rounded-xl bg-slate-900 border border-gray-800 hover:border-gold-500/50 transition-all">
+                                        <input type="radio" name="wish-type" value="krathong" checked class="accent-gold-500">
+                                        <span class="text-xs font-semibold text-gray-200">🪷 ลอยกระทง (สายนที)</span>
+                                    </label>
+                                    <label class="cursor-pointer flex items-center gap-2 p-3 rounded-xl bg-slate-900 border border-gray-800 hover:border-gold-500/50 transition-all">
+                                        <input type="radio" name="wish-type" value="lantern" class="accent-gold-500">
+                                        <span class="text-xs font-semibold text-gray-200">🏮 ปล่อยโคม (เวหา)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-gray-300 mb-1">ชื่อผู้ขอพร:</label>
+                                <input type="text" id="wish-name" placeholder="ชื่อของคุณ" required class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-gray-800 text-sm text-gray-200 focus:outline-none focus:border-gold-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-gray-300 mb-1">คำอธิษฐานขอพร:</label>
+                                <textarea id="wish-text" rows="3" placeholder="ขอให้มีความสุข กิจการก้าวหน้า สุขภาพแข็งแรง..." required class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-gray-800 text-sm text-gray-200 focus:outline-none focus:border-gold-500"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl font-heading font-semibold text-sm bg-gradient-to-r from-gold-500 to-amber-600 text-maroon-900 hover:from-gold-400 hover:to-amber-500 shadow-lg shadow-gold-500/20 transition-all">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> ส่งคำขอพรดิจิทัล
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Live Canvas Area -->
+                    <div class="lg:col-span-7 h-[480px] rounded-3xl overflow-hidden relative border border-gold-500/30 shadow-2xl glass-panel">
+                        <canvas id="interactive-wish-canvas" class="w-full h-full block"></canvas>
+                        <div class="absolute bottom-4 left-4 bg-slate-950/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-gray-800 text-xs text-gray-300">
+                            <i class="fa-solid fa-sparkles text-gold-400 mr-1"></i> คลิกบนผืนน้ำ/ท้องฟ้าเพื่อปล่อยกระทง/โคมด่วน
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Thai Traditions Showcase Section -->
+        <section id="festivals" class="py-20 bg-slate-900/40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-heading gold-gradient-text mb-4">เทศกาล & ประเพณีสำคัญ</h2>
+                    <p class="text-gray-400">สัมผัสเสน่ห์และความศรัทธาที่ถักทอเป็นเทศกาลเลื่องชื่อระดับโลก</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Festival Card 1 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-xl mb-4">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">เมษายน</span>
+                            <h3 class="text-xl font-bold text-white font-heading mt-1 mb-2">สงกรานต์ (Songkran)</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">ประเพณีปีใหม่ไทย ขึ้นชื่อเรื่องการสรงน้ำพระ รดน้ำดำหัวผู้ใหญ่ และการเล่นน้ำเฉลิมฉลอง ได้รับการขึ้นทะเบียนเป็นมรดกวัฒนธรรมที่จับต้องไม่ได้โดย UNESCO</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400">
+                            <span>มรดกโลก UNESCO</span>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+
+                    <!-- Festival Card 2 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-4">
+                                <i class="fa-solid fa-water"></i>
+                            </div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">พฤศจิกายน</span>
+                            <h3 class="text-xl font-bold text-white font-heading mt-1 mb-2">ลอยกระทง (Loy Krathong)</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">การแสดงความขอบคุณและขอขมาต่อพระแม่คงคาในคืนวันเพ็ญเดือน 12 พร้อมประดับประดาด้วยแสงไฟและดอกไม้ตระการตา</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400">
+                            <span>ทั่วประเทศ</span>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                    </div>
+
+                    <!-- Festival Card 3 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-4">
+                                <i class="fa-solid fa-mask"></i>
+                            </div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">มิถุนายน - กรกฎาคม</span>
+                            <h3 class="text-xl font-bold text-white font-heading mt-1 mb-2">ผีตาโขน (Phi Ta Khon)</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">ประเพณีพื้นบ้านสวมหน้ากากทำจากขวดหวดข้าวเหนียว สลักสลานสีสดใส เอกลักษณ์โดดเด่นประจำด่านซ้าย จังหวัดเลย</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400">
+                            <span>ด่านซ้าย, เลย</span>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                    </div>
+
+                    <!-- Festival Card 4 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 text-xl mb-4">
+                                <i class="fa-solid fa-fire text-red-400"></i>
+                            </div>
+                            <span class="text-xs text-gold-400 font-semibold uppercase">ตุลาคม</span>
+                            <h3 class="text-xl font-bold text-white font-heading mt-1 mb-2">บั้งไฟพญานาค</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">ปรากฏการณ์แห่งความศรัทธาลุ่มน้ำโขง ลูกไฟสีส้มแดงพุ่งขึ้นจากแม่น้ำโขงในคืนวันออกพรรษา จังหวัดหนองคายและบึงกาฬ</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400">
+                            <span>หนองคาย & บึงกาฬ</span>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Thai Cultural Quiz Section -->
+        <section id="quiz" class="py-20 relative">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-gold-500/30 shadow-2xl relative overflow-hidden">
+                    <div class="text-center mb-8">
+                        <div class="inline-block p-3 rounded-full bg-gold-500/10 border border-gold-500/30 mb-3">
+                            <i class="fa-solid fa-graduation-cap text-gold-400 text-2xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold font-heading text-white">ทดสอบความรู้มรดกวัฒนธรรมไทย</h2>
+                        <p class="text-sm text-gray-400 mt-2">ทดลองตอบคำถาม 5 ข้อ เพื่อรับตรามรดกไทยประจำตัว!</p>
+                    </div>
+
+                    <!-- Quiz Card Area -->
+                    <div id="quiz-container">
+                        <div class="flex justify-between items-center text-xs text-gray-400 mb-4">
+                            <span id="quiz-progress">ข้อที่ 1 จาก 5</span>
+                            <span id="quiz-score" class="text-gold-400 font-semibold">คะแนน: 0</span>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-slate-900 h-2 rounded-full mb-6 overflow-hidden border border-gray-800">
+                            <div id="quiz-progress-bar" class="bg-gradient-to-r from-gold-500 to-amber-400 h-full w-1/5 transition-all duration-300"></div>
+                        </div>
+
+                        <!-- Question Box -->
+                        <h3 id="quiz-question" class="text-lg sm:text-xl font-bold text-white mb-6 font-heading">
+                            คำถามจะปรากฏที่นี่...
+                        </h3>
+
+                        <!-- Options -->
+                        <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Options rendered by JS -->
+                        </div>
+
+                        <!-- Feedback Message -->
+                        <div id="quiz-feedback" class="mt-6 p-4 rounded-xl hidden text-sm font-medium"></div>
+
+                        <!-- Next / Restart Button -->
+                        <div class="mt-8 flex justify-end">
+                            <button id="quiz-next-btn" class="hidden px-6 py-2.5 rounded-xl font-heading font-semibold text-xs bg-gold-500 text-maroon-900 hover:bg-gold-400 transition-all">
+                                ข้อถัดไป <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Box (Hidden by default) -->
+                    <div id="quiz-result" class="hidden text-center py-8">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-gold-500 to-amber-300 text-maroon-900 flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg shadow-gold-500/30">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white font-heading">ยินดีด้วย! คุณเก่งมาก</h3>
+                        <p id="result-score-text" class="text-lg text-gold-400 font-semibold mt-2">คุณได้คะแนน 5 / 5</p>
+                        <p id="result-badge-text" class="text-sm text-gray-300 mt-1 mb-6">คุณได้รับตรา: "ผู้เชี่ยวชาญมรดกไทย"</p>
+                        
+                        <button id="quiz-restart-btn" class="px-8 py-3 rounded-full font-heading font-semibold text-xs bg-gold-500 text-maroon-900 hover:bg-gold-400 transition-all">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> ทำแบบทดสอบอีกครั้ง
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Detail Window -->
+    <div id="detail-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 hidden">
+        <div class="glass-panel max-w-2xl w-full rounded-3xl border border-gold-500/30 overflow-hidden shadow-2xl transform transition-all">
+            <div class="relative h-56 bg-slate-900">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                <button id="modal-close-btn" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="absolute bottom-4 left-4 bg-gold-500/90 text-maroon-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider font-heading" id="modal-tag">
+                    หมวดหมู่
+                </div>
+            </div>
+            <div class="p-6 sm:p-8">
+                <h3 id="modal-title" class="text-2xl font-bold text-white font-heading mb-3">ชื่อมรดก</h3>
+                <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed mb-6 font-sarabun">รายละเอียด...</p>
+                
+                <div class="border-t border-gray-800 pt-4 flex justify-between items-center">
+                    <span id="modal-meta" class="text-xs text-gold-400"><i class="fa-solid fa-landmark mr-1"></i> เอกลักษณ์สยาม</span>
+                    <button id="modal-dismiss" class="px-5 py-2 rounded-xl bg-slate-800 text-gray-200 hover:bg-slate-700 text-xs font-semibold">ปิดหน้าต่าง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-gray-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 justify-center sm:justify-start mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gold-500 flex items-center justify-center text-maroon-900 font-bold">
+                            <i class="fa-solid fa-om"></i>
+                        </div>
+                        <span class="text-lg font-bold font-heading gold-gradient-text">มรดกวัฒนธรรมไทย</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-sm mx-auto sm:mx-0">
+                        โครงการสืบสานและส่งเสริมคุณค่ามรดกวัฒนธรรมไทย นำเสนอด้วยเทคโนโลยีเว็บสมัยใหม่เพื่อให้คนรุ่นใหม่และชาวโลกได้ร่วมชื่นชม
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold font-heading text-white uppercase tracking-wider mb-3">ลิงก์ด่วน</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#categories" class="hover:text-gold-400">หมวดหมู่วัฒนธรรม</a></li>
+                        <li><a href="#ranad" class="hover:text-gold-400">ดนตรีไทยจำลอง</a></li>
+                        <li><a href="#wishing-canvas" class="hover:text-gold-400">ลอยกระทงดิจิทัล</a></li>
+                        <li><a href="#quiz" class="hover:text-gold-400">แบบทดสอบมรดกไทย</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold font-heading text-white uppercase tracking-wider mb-3">คุณค่าทางวัฒนธรรม</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        "มรดกไทย มรดกโลก ร่วมอนุรักษ์ ฟื้นฟู และสืบสานให้อยู่คู่แผ่นดินไทยสืบไป"
+                    </p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-4">
+                <p>&copy; 2026 มรดกวัฒนธรรมไทย (Thai Cultural Heritage). All rights reserved.</p>
+                <div class="flex gap-4 text-base text-gray-400">
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="hover:text-gold-400"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cultural Items Dataset
+        const cultureItems = [
+            {
+                id: 1,
+                title: "โขน (Khon Dance Drama)",
+                category: "performance",
+                img: "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "นาฏศิลป์ชั้นสูงของไทย สวมหน้ากากหัวโขน บรรยายเรื่องรามเกียรติ์",
+                fullDesc: "โขน เป็นนาฏศิลป์ชั้นสูงของไทยที่มีประวัติยาวนาน มีการรวมศิลปะหลากหลายแขนง ทั้งวรรณกรรม วิจิตรศิลป์ มัณฑนศิลป์ ดุริยางคศิลป์ และนาฏศิลป์ เข้าไว้ด้วยกัน ผู้แสดงสวมหน้ากากหัวโขน ร่ายรำด้วยท่วงท่าที่งดงามตามจังหวะดนตรีปี่พาทย์ ได้รับการขึ้นทะเบียนจาก UNESCO เป็นมรดกวัฒนธรรมที่จับต้องไม่ได้ในปี 2018"
+            },
+            {
+                id: 2,
+                title: "ต้มยำกุ้ง (Tom Yum Goong)",
+                category: "food",
+                img: "https://images.unsplash.com/photo-1548943487-a2e4e43b4853?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "ต้มยำรสเลิศ เอกลักษณ์รสชาติเปรี้ยว เผ็ด เค็ม หอมสมุนไพรไทย",
+                fullDesc: "ต้มยำกุ้ง คืออาหารไทยที่มีชื่อเสียงระดับโลก สะท้อนถึงภูมิปัญญาการนำสมุนไพรไทย เช่น ข่า ตะไคร้ ใบมะกรูด มะนาว และพริกขี้หนู มาปรุงผสมผสานกับกุ้งสดแม่น้ำ เกิดเป็นรสชาติครบรส เปรี้ยว เผ็ด เค็ม และหอมกลิ่นสมุนไพรอย่างลงตัว"
+            },
+            {
+                id: 3,
+                title: "สถาปัตยกรรมวัดไทย (Thai Temple Architecture)",
+                category: "architecture",
+                img: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "ช่อฟ้า ใบระกา หางหงส์ และยอดเจดีย์ทรงย่อมุมไม้สิบสองอันทรงคุณค่า",
+                fullDesc: "สถาปัตยกรรมไทยในวัดและพระราชวังสะท้อนถึงความเชื่อทางศาสนาพุทธและความปราณีตของช่างสิบหมู่ โดดเด่นด้วยหลังคาซ้อนชั้น ช่อฟ้า ใบระกา หางหงส์ ปูนปั้น ลายกระหนก และงานลงรักปิดทองคำแท้"
+            },
+            {
+                id: 4,
+                title: "ผ้าไหมไทย (Thai Silk)",
+                category: "textile",
+                img: "https://images.unsplash.com/photo-1606744888344-493238951221?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "หัตถกรรมทอผ้าไหมมัดหมี่ด้วยมือ เงางามทรงคุณค่าระดับโลก",
+                fullDesc: "ผ้าไหมไทยเป็นหัตถกรรมพื้นบ้านอันเป็นเอกลักษณ์ โดยเฉพาะผ้าไหมมัดหมี่ภาคอีสาน มีลวดลายสืบทอดจากภูมิปัญญาบรรพบุรุษ มีความเงางามและลวดลายวิจิตรบรรจง ได้รับการส่งเสริมและวาดลวดลายสืบสานโดยสมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง"
+            },
+            {
+                id: 5,
+                title: "มวยไทย (Muay Thai)",
+                category: "martial",
+                img: "https://images.unsplash.com/photo-1599586120429-48281b6a0ece?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "ศิลปะการต่อสู้ใช้นวอาวุธ (หมัด ศอก เข่า เท้า) และพิธีไหว้ครูอันศักดิ์สิทธิ์",
+                fullDesc: "มวยไทย เป็นศิลปะการต่อสู้ป้องกันตัวประจำชาติไทยที่ใช้ร่างกายเป็นอาวุธ 8 อย่าง (นวอาวุธ) ได้แก่ สองหมัด สองศอก สองเข่า และสองเท้า มีจุดเด่นที่พิธีไหว้ครูมวยไทย และมงคลสวมศีรษะ เป็นที่ยอมรับและได้รับความนิยมไปทั่วโลก"
+            },
+            {
+                id: 6,
+                title: "นวดไทย (Nuad Thai Traditional Massage)",
+                category: "performance",
+                img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "ศาสตร์การบำบัดทางร่างกายตามเส้นประธานสิบ มรดกโลก UNESCO",
+                fullDesc: "การนวดไทยเป็นศาสตร์และศิลปะบำบัดรักษาโรคตามตำราการแพทย์แผนไทย ดัดตน และกดจุดตามเส้นประธานสิบ มีประวัติสืบทอดตั้งแต่สมัยสุโขทัยและจารึกไว้ ณ วัดพระเชตุพนวิมลมังคลาราม (วัดโพธิ์) ได้รับการขึ้นทะเบียนเป็นมรดกวัฒนธรรม UNESCO"
+            }
+        ];
+
+        // Web Audio API Sound Generation for Ranad Ek
+        let audioCtx = null;
+        const ranadNotes = [
+            { note: "C4", freq: 261.63, label: "ซอล (ต่ำ)", key: "1" },
+            { note: "D4", freq: 293.66, label: "ลา (ต่ำ)", key: "2" },
+            { note: "E4", freq: 329.63, label: "โด", key: "3" },
+            { note: "G4", freq: 392.00, label: "เร", key: "4" },
+            { note: "A4", freq: 440.00, label: "มี", key: "5" },
+            { note: "C5", freq: 523.25, label: "ฟา", key: "6" },
+            { note: "D5", freq: 587.33, label: "ซอล", key: "7" },
+            { note: "E5", freq: 659.25, label: "ลา", key: "8" },
+            { note: "G5", freq: 783.99, label: "ที", key: "9" },
+            { note: "A5", freq: 880.00, label: "โด (สูง)", key: "Q" },
+            { note: "C6", freq: 1046.50, label: "เร (สูง)", key: "W" },
+            { note: "D6", freq: 1174.66, label: "มี (สูง)", key: "E" }
+        ];
+
+        function playRanadSound(freq) {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            // Wooden Ranad harmonics synthesis
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            // Percussive envelope (wooden bar hit)
+            gain.gain.setValueAtTime(0.9, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.2);
+        }
+
+        // Render Ranad Keys
+        function initRanadKeys() {
+            const container = document.getElementById('ranad-keys-container');
+            container.innerHTML = '';
+
+            ranadNotes.forEach((item, idx) => {
+                const keyElem = document.createElement('div');
+                // Calculate size based on pitch (lower pitches are longer)
+                const heightPercent = 100 - (idx * 3.5);
+                
+                keyElem.className = `ranad-key cursor-pointer flex flex-col justify-between items-center py-2 px-1 rounded-md text-white select-none transition-all flex-1 max-w-[45px]`;
+                keyElem.style.height = `${heightPercent}%`;
+                keyElem.setAttribute('data-key', item.key);
+
+                keyElem.innerHTML = `
+                    <span class="text-[10px] text-amber-300 font-bold font-heading">${item.key}</span>
+                    <span class="text-[9px] text-amber-100 opacity-80 rotate-90 sm:rotate-0">${item.label}</span>
+                `;
+
+                const triggerPlay = () => {
+                    playRanadSound(item.freq);
+                    keyElem.classList.add('active');
+                    setTimeout(() => keyElem.classList.remove('active'), 150);
+                };
+
+                keyElem.addEventListener('mousedown', triggerPlay);
+                keyElem.addEventListener('touchstart', (e) => { e.preventDefault(); triggerPlay(); });
+
+                container.appendChild(keyElem);
+            });
+        }
+
+        // Keyboard press handler for Ranad
+        window.addEventListener('keydown', (e) => {
+            const pressedKey = e.key.toUpperCase();
+            const noteObj = ranadNotes.find(n => n.key === pressedKey);
+            if (noteObj) {
+                playRanadSound(noteObj.freq);
+                const elem = document.querySelector(`[data-key="${pressedKey}"]`);
+                if (elem) {
+                    elem.classList.add('active');
+                    setTimeout(() => elem.classList.remove('active'), 150);
+                }
+            }
+        });
+
+        // Demo melody player
+        document.getElementById('ranad-demo-btn').addEventListener('click', () => {
+            const demoMelody = [0, 2, 4, 6, 7, 6, 4, 2, 0, 4, 7, 9, 11, 9, 7, 4];
+            demoMelody.forEach((noteIdx, step) => {
+                setTimeout(() => {
+                    const item = ranadNotes[noteIdx];
+                    if (item) {
+                        playRanadSound(item.freq);
+                        const elem = document.querySelector(`[data-key="${item.key}"]`);
+                        if (elem) {
+                            elem.classList.add('active');
+                            setTimeout(() => elem.classList.remove('active'), 180);
+                        }
+                    }
+                }, step * 250);
+            });
+        });
+
+        // Render Cards with Filter
+        function renderCards(filter = 'all', searchQuery = '') {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
+
+            const filtered = cultureItems.filter(item => {
+                const matchCategory = (filter === 'all' || item.category === filter);
+                const matchSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                    item.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-400">
+                        <i class="fa-solid fa-folder-open text-4xl mb-3 text-gold-500/50"></i>
+                        <p>ไม่พบข้อมูลมรดกวัฒนธรรมที่ตรงกับคำค้นหาของคุณ</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel rounded-2xl overflow-hidden gold-border-glow transition-all flex flex-col justify-between group cursor-pointer';
+                card.onclick = () => openModal(item);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 text-gold-300 text-[10px] font-semibold border border-gold-500/30 backdrop-blur-md">
+                                ${getCategoryName(item.category)}
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white font-heading mb-2 group-hover:text-gold-400 transition-colors">${item.title}</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">${item.shortDesc}</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2 flex items-center justify-between text-xs text-gold-400 font-semibold font-heading">
+                        <span>อ่านเพิ่มเติม</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function getCategoryName(cat) {
+            const map = {
+                architecture: 'สถาปัตยกรรม',
+                food: 'อาหารไทย',
+                performance: 'นาฏศิลป์',
+                textile: 'ผ้าไทย',
+                martial: 'มวยไทย'
+            };
+            return map[cat] || 'มรดกไทย';
+        }
+
+        // Modal Functionality
+        function openModal(item) {
+            document.getElementById('modal-img').src = item.img;
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-desc').textContent = item.fullDesc;
+            document.getElementById('modal-tag').textContent = getCategoryName(item.category);
+            document.getElementById('detail-modal').classList.remove('hidden');
+        }
+
+        document.getElementById('modal-close-btn').onclick = () => document.getElementById('detail-modal').classList.add('hidden');
+        document.getElementById('modal-dismiss').onclick = () => document.getElementById('detail-modal').classList.add('hidden');
+
+        // Hero background canvas particle animation (Floating Lotus Flowers & Golden Stars)
+        function initHeroCanvas() {
+            const canvas = document.getElementById('hero-canvas');
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = canvas.offsetWidth;
+            let height = canvas.height = canvas.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            });
+
+            const particles = Array.from({ length: 45 }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 2 + 1,
+                alpha: Math.random() * 0.6 + 0.2,
+                speedY: -(Math.random() * 0.4 + 0.1),
+                speedX: (Math.random() - 0.5) * 0.2
+            }));
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                particles.forEach(p => {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+
+                    if (p.y < 0) {
+                        p.y = height;
+                        p.x = Math.random() * width;
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(234, 179, 8, ${p.alpha})`;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = '#eab308';
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Interactive Loi Krathong / Lantern Canvas
+        function initWishCanvas() {
+            const canvas = document.getElementById('interactive-wish-canvas');
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = canvas.parentElement.offsetWidth;
+            let height = canvas.height = canvas.parentElement.offsetHeight;
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = canvas.parentElement.offsetWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+            });
+
+            const wishObjects = [];
+
+            // Add default initial lanterns/krathongs
+            for (let i = 0; i < 6; i++) {
+                wishObjects.push({
+                    x: Math.random() * width,
+                    y: Math.random() * (height * 0.7) + (height * 0.2),
+                    type: Math.random() > 0.5 ? 'krathong' : 'lantern',
+                    name: "ผู้ขอพร",
+                    text: "ขอให้โชคดี มีความสุข",
+                    speedX: (Math.random() * 0.4 + 0.1),
+                    speedY: Math.random() > 0.5 ? -0.15 : 0.05,
+                    scale: Math.random() * 0.4 + 0.8
+                });
+            }
+
+            function draw() {
+                // Gradient Night Sky / Water Background
+                const bgGrad = ctx.createLinearGradient(0, 0, 0, height);
+                bgGrad.addColorStop(0, '#070c19');
+                bgGrad.addColorStop(0.5, '#0f172a');
+                bgGrad.addColorStop(1, '#051329');
+                ctx.fillStyle = bgGrad;
+                ctx.fillRect(0, 0, width, height);
+
+                // Water reflection line
+                ctx.strokeStyle = 'rgba(234, 179, 8, 0.15)';
+                ctx.lineWidth = 1;
+                for (let i = 0; i < height; i += 20) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, i);
+                    ctx.lineTo(width, i);
+                    ctx.stroke();
+                }
+
+                // Update & Render floating items
+                wishObjects.forEach((obj) => {
+                    obj.x += obj.speedX;
+                    if (obj.type === 'lantern') {
+                        obj.y += obj.speedY - 0.2; // Lanterns float up
+                    } else {
+                        obj.y += Math.sin(Date.now() * 0.002 + obj.x) * 0.2; // Krathongs float on water
+                    }
+
+                    // Reset if out of screen
+                    if (obj.x > width + 50) obj.x = -50;
+                    if (obj.y < -50) obj.y = height + 30;
+
+                    ctx.save();
+                    ctx.translate(obj.x, obj.y);
+                    ctx.scale(obj.scale, obj.scale);
+
+                    if (obj.type === 'krathong') {
+                        // Draw Krathong (Lotus shape)
+                        ctx.shadowBlur = 15;
+                        ctx.shadowColor = '#facc15';
+
+                        // Candle Flame
+                        ctx.beginPath();
+                        ctx.arc(0, -15, 6, 0, Math.PI * 2);
+                        ctx.fillStyle = '#ffb703';
+                        ctx.fill();
+
+                        // Lotus Base
+                        ctx.beginPath();
+                        ctx.ellipse(0, 0, 24, 10, 0, 0, Math.PI * 2);
+                        ctx.fillStyle = '#15803d';
+                        ctx.fill();
+
+                        // Petals
+                        ctx.beginPath();
+                        ctx.arc(0, -4, 18, 0, Math.PI);
+                        ctx.fillStyle = '#ec4899';
+                        ctx.fill();
+                    } else {
+                        // Draw Yi Peng Lantern
+                        ctx.shadowBlur = 20;
+                        ctx.shadowColor = '#f97316';
+
+                        // Lantern Body
+                        ctx.fillStyle = 'rgba(254, 215, 170, 0.9)';
+                        ctx.beginPath();
+                        ctx.roundRect(-12, -20, 24, 30, 4);
+                        ctx.fill();
+
+                        // Inner Glow
+                        ctx.fillStyle = '#ffb703';
+                        ctx.beginPath();
+                        ctx.arc(0, -2, 8, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+
+                    // Text tag
+                    ctx.shadowBlur = 0;
+                    ctx.font = '10px Sarabun';
+                    ctx.fillStyle = '#e2e8f0';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`${obj.name}: ${obj.text.substring(0, 12)}...`, 0, 22);
+
+                    ctx.restore();
+                });
+
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+
+            // Submit new Wish
+            document.getElementById('wish-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('wish-name').value;
+                const text = document.getElementById('wish-text').value;
+                const type = document.querySelector('input[name="wish-type"]:checked').value;
+
+                wishObjects.push({
+                    x: Math.random() * (width * 0.5) + 50,
+                    y: type === 'lantern' ? height - 50 : height * 0.6,
+                    type: type,
+                    name: name || "ผู้ขอพร",
+                    text: text || "ขอความสุขความเจริญ",
+                    speedX: (Math.random() * 0.4 + 0.2),
+                    speedY: -0.2,
+                    scale: 1.1
+                });
+
+                // Clear input
+                document.getElementById('wish-text').value = '';
+            });
+
+            // Click canvas to float instant krathong
+            canvas.addEventListener('click', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const clickY = e.clientY - rect.top;
+
+                wishObjects.push({
+                    x: clickX,
+                    y: clickY,
+                    type: Math.random() > 0.5 ? 'krathong' : 'lantern',
+                    name: "มิตรแท้",
+                    text: "ขอให้พบเจอแต่สิ่งดีๆ",
+                    speedX: 0.3,
+                    speedY: -0.1,
+                    scale: 1.0
+                });
+            });
+        }
+
+        // Quiz Data and Logic
+        const quizData = [
+            {
+                q: "มรดกวัฒนธรรมไทยใดได้รับการขึ้นทะเบียนเป็นมรดกวัฒนธรรมที่จับต้องไม่ได้โดย UNESCO ล่าสุด?",
+                options: ["สงกรานต์ในประเทศไทย", "ต้มยำกุ้ง", "แกงเขียวหวาน", "ข้าวเหนียวมะม่วง"],
+                correct: 0
+            },
+            {
+                q: "เครื่องดนตรีไทยประเภทเครื่องตีที่ทำจากผืนไม้สนองเสียงกังวานในวงปี่พาทย์คืออะไร?",
+                options: ["ซออู้", "ระนาดเอก", "ฆ้องวงใหญ่", "ขลุ่ยเพียงออ"],
+                correct: 1
+            },
+            {
+                q: "ประเพณีผีตาโขนอันเป็นเอกลักษณ์ประจำภาคอีสานจัดขึ้น ณ จังหวัดใด?",
+                options: ["เชียงใหม่", "ขอนแก่น", "เลย (ด่านซ้าย)", "อุบลราชธานี"],
+                correct: 2
+            },
+            {
+                q: "มวยไทยใช้ส่วนใดของร่างกายเป็นอาวุธในการต่อสู้ที่เรียกว่า 'นวอาวุธ' (9 อาวุธรวมศีรษะ)?",
+                options: ["หมัด ศอก เข่า เท้า", "มือและดาบ", "โล่และหอก", "กระบองและกริช"],
+                correct: 0
+            },
+            {
+                q: "งานประเพณีลอยกระทงนิยมจัดขึ้นในวันใดของปี?",
+                options: ["วันขึ้น 15 ค่ำ เดือน 5", "วันขึ้น 15 ค่ำ เดือน 12", "วันแรม 8 ค่ำ เดือน 6", "วันสงกรานต์"],
+                correct: 1
+            }
+        ];
+
+        let currentQuizIdx = 0;
+        let score = 0;
+
+        function renderQuestion() {
+            const current = quizData[currentQuizIdx];
+            document.getElementById('quiz-progress').textContent = `ข้อที่ ${currentQuizIdx + 1} จาก ${quizData.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuizIdx + 1) / quizData.length) * 100}%`;
+            document.getElementById('quiz-question').textContent = current.q;
+            
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.classList.add('hidden');
+            document.getElementById('quiz-next-btn').classList.add('hidden');
+
+            current.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full p-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-gray-800 text-left text-sm text-gray-200 font-sarabun transition-all flex items-center justify-between';
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-gray-500"></i>`;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIdx, btnElem) {
+            const current = quizData[currentQuizIdx];
+            const allBtns = document.getElementById('quiz-options').children;
+            
+            // Disable all buttons
+            for (let b of allBtns) {
+                b.disabled = true;
+                b.classList.add('opacity-60');
+            }
+
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.classList.remove('hidden');
+
+            if (selectedIdx === current.correct) {
+                score++;
+                document.getElementById('quiz-score').textContent = `คะแนน: ${score}`;
+                btnElem.classList.remove('bg-slate-900', 'border-gray-800', 'opacity-60');
+                btnElem.classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+                feedback.className = 'mt-6 p-4 rounded-xl text-sm font-medium bg-emerald-950/80 border border-emerald-500/50 text-emerald-300';
+                feedback.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> ถูกต้องแล้วครับ! ยอดเยี่ยมมาก';
+            } else {
+                btnElem.classList.remove('bg-slate-900', 'border-gray-800', 'opacity-60');
+                btnElem.classList.add('bg-rose-950', 'border-rose-500', 'text-rose-200');
+                
+                // Highlight correct one
+                allBtns[current.correct].classList.remove('opacity-60');
+                allBtns[current.correct].classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+
+                feedback.className = 'mt-6 p-4 rounded-xl text-sm font-medium bg-rose-950/80 border border-rose-500/50 text-rose-300';
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2"></i> ยังไม่ถูกต้องครับ คำตอบที่ถูกคือ: ${current.options[current.correct]}`;
+            }
+
+            document.getElementById('quiz-next-btn').classList.remove('hidden');
+        }
+
+        document.getElementById('quiz-next-btn').onclick = () => {
+            currentQuizIdx++;
+            if (currentQuizIdx < quizData.length) {
+                renderQuestion();
+            } else {
+                showQuizResult();
+            }
+        };
+
+        function showQuizResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            const resultBox = document.getElementById('quiz-result');
+            resultBox.classList.remove('hidden');
+
+            document.getElementById('result-score-text').textContent = `คุณได้คะแนน ${score} / ${quizData.length}`;
+            let badge = "ผู้รักวัฒนธรรมไทย";
+            if (score === 5) badge = "ผู้เชี่ยวชาญมรดกสยาม (Gold Certificate)";
+            else if (score >= 3) badge = "ผู้สืบสานมรดกไทย (Silver Certificate)";
+            
+            document.getElementById('result-badge-text').textContent = `คุณได้รับตราเกียรติยศ: "${badge}"`;
+        }
+
+        document.getElementById('quiz-restart-btn').onclick = () => {
+            currentQuizIdx = 0;
+            score = 0;
+            document.getElementById('quiz-score').textContent = `คะแนน: 0`;
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            renderQuestion();
+        };
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.cat-btn').forEach(b => {
+                    b.classList.remove('bg-gold-500', 'text-maroon-900');
+                    b.classList.add('bg-slate-800', 'text-gray-300');
+                });
+                btn.classList.remove('bg-slate-800', 'text-gray-300');
+                btn.classList.add('bg-gold-500', 'text-maroon-900');
+
+                const cat = btn.getAttribute('data-cat');
+                const query = document.getElementById('culture-search').value;
+                renderCards(cat, query);
+            });
+        });
+
+        // Search input
+        document.getElementById('culture-search').addEventListener('input', (e) => {
+            const activeBtn = document.querySelector('.cat-btn.bg-gold-500');
+            const cat = activeBtn ? activeBtn.getAttribute('data-cat') : 'all';
+            renderCards(cat, e.target.value);
+        });
+
+        // Window onload initialization
+        window.onload = function () {
+            initHeroCanvas();
+            initRanadKeys();
+            initWishCanvas();
+            renderCards();
+            renderQuestion();
+        };
+    </script>
+</body>
+</html>
